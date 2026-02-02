@@ -1,0 +1,10 @@
+let n1= 10;
+let n2=5;
+let soma= n1+n2;
+let sub= n1-n2;
+let multi= n1*n2;
+let div= n1/n2;
+console.log("A soma é "+ soma);
+console.log("A subtração é "+ sub);
+console.log("a multiplicação é "+ multi);
+console.log("a divisão é " + div);
