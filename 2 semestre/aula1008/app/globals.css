@@ -1,0 +1,329 @@
+/* =====================================================
+   ESTILO GERAL
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #b8d52a;
+    color: #111111;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    width: 92%;
+    max-width: 1100px;
+    margin: 25px auto 0;
+    background: #f7f7f2;
+    border-radius: 12px;
+    padding: 16px 25px;
+    border: 2px solid #111111;
+    box-shadow: 4px 4px 0 #111111;
+}
+
+header nav {
+    width: 100%;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 35px;
+    list-style: none;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    position: relative;
+    color: #111111;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+header nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 3px;
+    background: #dfff00;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+header nav ul li a:hover {
+    color: #e87bdc;
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+main {
+    width: 92%;
+    max-width: 1100px;
+    min-height: 70vh;
+    margin: 25px auto;
+    padding: 80px 50px;
+    background: #111111;
+    border-radius: 12px;
+    border: 2px solid #111111;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* detalhes decorativos */
+
+main::before {
+    content: "✦";
+    position: absolute;
+    top: 35px;
+    right: 50px;
+    color: #ff9ce9;
+    font-size: 55px;
+    transform: rotate(15deg);
+}
+
+main::after {
+    content: "✦";
+    position: absolute;
+    bottom: 30px;
+    left: 45px;
+    color: #dfff00;
+    font-size: 40px;
+}
+
+
+/* =====================================================
+   TÍTULOS
+   ===================================================== */
+
+main h1 {
+    position: relative;
+    z-index: 2;
+    color: #f7f7f2;
+    font-size: clamp(48px, 8vw, 100px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    max-width: 850px;
+}
+
+main h1::first-letter {
+    color: #ff9ce9;
+}
+
+
+/* =====================================================
+   TEXTOS
+   ===================================================== */
+
+main p {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    color: #f7f7f2;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   EFEITO PARA PÁGINA DE CATEGORIAS
+   ===================================================== */
+
+main h1 {
+    text-align: left;
+}
+
+
+/* =====================================================
+   LINKS / BOTÕES
+   ===================================================== */
+
+main a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: #dfff00;
+    color: #111111;
+    border: 2px solid #111111;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 4px 4px 0 #ff9ce9;
+}
+
+main a:hover {
+    background: #ff9ce9;
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 0 #dfff00;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    width: 92%;
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 35px 30px;
+    background: #dfff00;
+    border: 2px solid #111111;
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 #111111;
+    text-align: center;
+}
+
+footer p {
+    color: #111111;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   VISUAL DE CATEGORIAS
+   ===================================================== */
+
+main h1 {
+    position: relative;
+}
+
+main h1::after {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 8px;
+    margin-top: 25px;
+    background: #ff9ce9;
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   CARACTERÍSTICAS VISUAIS
+   ===================================================== */
+
+main {
+    background-image:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(223, 255, 0, 0.12) 0,
+            rgba(223, 255, 0, 0.12) 3px,
+            transparent 4px
+        );
+    background-size: 35px 35px;
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    header {
+        width: 94%;
+        padding: 18px;
+    }
+
+    header nav ul {
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    header nav ul li a {
+        font-size: 13px;
+    }
+
+    main {
+        width: 94%;
+        padding: 60px 25px;
+        min-height: 65vh;
+    }
+
+    main h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    main p {
+        font-size: 15px;
+    }
+
+    main::before {
+        font-size: 35px;
+        right: 25px;
+    }
+
+    main::after {
+        font-size: 30px;
+        left: 20px;
+    }
+
+    footer {
+        width: 94%;
+    }
+}
+
+
+/* =====================================================
+   TELAS MUITO PEQUENAS
+   ===================================================== */
+
+@media (max-width: 450px) {
+
+    header nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    main {
+        padding: 50px 20px;
+    }
+
+    main h1 {
+        font-size: 40px;
+    }
+
+    main h1::after {
+        width: 120px;
+        height: 6px;
+    }
+}

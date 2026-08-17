@@ -1,0 +1,77 @@
+/* Fundo da página */
+body {
+    background-color: #e8d7db;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+h3 {
+    color: #d16b86;
+}
+
+/* Card (formulário) */
+.card {
+    background-color: #f3e6ea !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Labels */
+.form-label {
+    color: #a85a6a;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+.form-control {
+    background-color: #f9f9f9;
+    border: 2px solid #e2b8c3;
+    border-radius: 12px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* Foco nos inputs */
+.form-control:focus {
+    border-color: #ff7a9c;
+    box-shadow: 0 0 0 0.2rem rgba(255, 122, 156, 0.2);
+    outline: none;
+}
+
+/* Placeholder */
+.form-control::placeholder {
+    color: #c9a1ab;
+}
+
+/* Linha separadora */
+hr {
+    border-top: 1px solid #e2b8c3;
+}
+
+/* Botão */
+.btn-primary {
+    background-color: #ff7a9c !important;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Hover botão */
+.btn-primary:hover {
+    background-color: #e86586 !important;
+    transform: scale(1.03);
+}
+
+/* Ícone do botão */
+.btn i {
+    color: white;
+}
+
+/* Responsividade leve */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px !important;
+    }
+}

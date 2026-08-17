@@ -1,0 +1,59 @@
+/* Container geral */
+.container {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffa8d2;
+  color: #8c2451;
+  min-height: 100vh;
+  transition: 0.3s;
+}
+
+/* Tema escuro */
+.container.dark {
+  background-color: #942048;
+  color: #ff9dc9;
+}
+
+/* Botão */
+.botao-tema {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 250px;
+  border-radius: 12px;
+  padding: 15px;
+  transition: 0.3s;
+}
+
+/* Card no tema escuro */
+.container.dark .card {
+  background: #54172c;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+}

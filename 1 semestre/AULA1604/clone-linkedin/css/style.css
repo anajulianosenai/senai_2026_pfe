@@ -1,0 +1,17 @@
+body {
+  background-color: #193acd;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  border-bottom: 1px solid #ddd;
+}
+
+.card {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  font-size: 14px;
+}

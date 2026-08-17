@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Clone LinkedIn</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" style="color:#0a66c2;">LinkedIn</a>
+      <input class="form-control w-50" type="text" placeholder="Pesquisar">
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO -->
+  <div class="container mt-4">
+    <div class="row">
+
+      <!-- ESQUERDA (PERFIL) -->
+      <div class="col-md-3">
+        <div class="card">
+          <div class="bg-primary" style="height: 60px;"></div>
+          <div class="text-center p-3">
+            <img src="https://blog.unyleya.edu.br/wp-content/uploads/2017/12/saiba-como-a-educacao-ajuda-voce-a-ser-uma-pessoa-melhor.jpeg" class="rounded-circle mb-2" width="80" height="80">
+            <h6 class="mt-2 mb-0">Sofia</h6>
+            <small class="text-muted">Desenvolvedor</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEIO (FEED) -->
+      <div class="col-md-6">
+
+        <!-- POST 1 -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="https://via.placeholder.com/40" class="rounded-circle me-2">
+              <div>
+                <strong>Usuário</strong><br>
+                <small class="text-muted">2h • 🌎</small>
+              </div>
+            </div>
+
+            <p>Esse é um post estilo LinkedIn 🚀</p>
+
+            <hr>
+
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-light btn-sm">👍 Curtir</button>
+              <button class="btn btn-light btn-sm">💬 Comentar</button>
+              <button class="btn btn-light btn-sm">↗ Compartilhar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- POST 2 -->
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-2">
+              <img src="https://via.placeholder.com/40" class="rounded-circle me-2">
+              <div>
+                <strong>Outro Usuário</strong><br>
+                <small class="text-muted">5h • 🌎</small>
+              </div>
+            </div>
+
+            <p>Mais um post aqui...</p>
+
+            <hr>
+
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-light btn-sm">👍 Curtir</button>
+              <button class="btn btn-light btn-sm">💬 Comentar</button>
+              <button class="btn btn-light btn-sm">↗ Compartilhar</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DIREITA -->
+      <div class="col-md-3">
+        <div class="card p-3">
+          <h6 class="fw-bold">Sugestões</h6>
+
+          <p class="mb-1">Marina Albuquerque</p>
+          <button class="btn btn-primary btn-sm mb-2">Conectar</button>
+
+          <p class="mb-1">Marcos Antônio</p>
+          <button class="btn btn-primary btn-sm">Conectar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

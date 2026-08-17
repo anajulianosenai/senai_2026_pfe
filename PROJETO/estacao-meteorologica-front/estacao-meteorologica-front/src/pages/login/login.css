@@ -1,0 +1,87 @@
+/* principal.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffeef2; /* rosa bem claro */
+}
+
+/* Centralizar a tela */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa do login */
+section > div {
+    background-color: #fff0f5; /* rosa pastel */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+/* Título */
+h2 {
+    text-align: center;
+    color: #d46a92;
+    margin-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+label {
+    text-align: center ;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #f5c6d6;
+    border-radius: 10px;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Efeito ao clicar */
+input:focus {
+    border-color: #d46a92;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 10px;
+    color: #a85d79;
+    font-size: 14px;
+}
+
+/* Botão (Link estilizado) */
+a {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(255, 155, 183);
+    border-radius: 10px;
+}
+
+button{
+display: block;
+  margin: 0 auto;
+margin-top: 20px;
+padding: 10px;
+font-size: 15px;
+background-color: #f5c6d6;
+color: white;
+text-decoration: none;
+border-radius: 10px;
+border-color: #d46a92;
+border-width:1px;
+align-items: center;
+width: 100%;
+}

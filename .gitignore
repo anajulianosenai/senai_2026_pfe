@@ -1,0 +1,142 @@
+# ==============================
+
+# Node.js
+
+# ==============================
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==============================
+
+# Next.js
+
+# ==============================
+
+.next/
+out/
+.vercel/
+
+# ==============================
+
+# Build
+
+# ==============================
+
+dist/
+build/
+
+# ==============================
+
+# Environment Variables
+
+# ==============================
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==============================
+
+# Logs
+
+# ==============================
+
+logs/
+*.log
+
+# ==============================
+
+# Cache
+
+# ==============================
+
+.cache/
+.parcel-cache/
+.eslintcache
+.turbo/
+
+# ==============================
+
+# Testing
+
+# ==============================
+
+coverage/
+
+# ==============================
+
+# TypeScript
+
+# ==============================
+
+*.tsbuildinfo
+next-env.d.ts
+
+# ==============================
+
+# IDE / VS Code
+
+# ==============================
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+.idea/
+*.iml
+
+# ==============================
+
+# Sistema Operacional
+
+# ==============================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+
+# Arquivos temporários
+
+# ==============================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ==============================
+
+# Banco de dados local
+
+# ==============================
+
+*.sqlite
+*.sqlite3
+*.db
+
+# ==============================
+
+# Vercel
+
+# ==============================
+
+.vercel
+
+# ==============================
+
+# Arquivos de configuração local
+
+# ==============================
+
+*.local
+!.env.example

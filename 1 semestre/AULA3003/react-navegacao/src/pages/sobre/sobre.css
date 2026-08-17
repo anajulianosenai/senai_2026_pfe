@@ -1,0 +1,44 @@
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff0f5; /* rosa bem suave */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.titulo {
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Parágrafo */
+.container p {
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+/* Link de voltar */
+.container a {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #f8bbd0;
+    color: #880e4f;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* Hover do botão */
+.container a:hover {
+    background-color: #f48fb1;
+    transform: scale(1.05);
+}

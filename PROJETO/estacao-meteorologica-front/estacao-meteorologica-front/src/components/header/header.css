@@ -1,0 +1,102 @@
+/* Fundo geral da página (opcional, se quiser igual ao login) */
+body {
+    background-color: #e8d7db;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container do header */
+header {
+    background-color: #f3e6ea;
+    padding: 15px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+header h2 {
+    color: #d16b86;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Ícone */
+header i {
+    color: #d16b86;
+}
+
+/* Links */
+.nav-link {
+    color: #a85a6a !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover dos links */
+.nav-link:hover {
+    color: #ff7a9c !important;
+    text-decoration: underline;
+}
+
+/* Destaque (classe que você já usa) */
+.destaque-link {
+    position: relative;
+}
+
+/* Efeito de linha animada */
+.destaque-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ff7a9c;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.destaque-link:hover::after {
+    width: 100%;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background-color: #f3e6ea;
+    border-radius: 15px;
+    border: 1px solid #e2b8c3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Itens do dropdown */
+.dropdown-item,
+.dropdown-menu .nav-link {
+    color: #a85a6a;
+    transition: 0.2s;
+}
+
+/* Hover dropdown */
+.dropdown-item:hover {
+    background-color: #f8dce3;
+    color: #ff7a9c;
+}
+
+/* Botões dropdown (corrigindo aparência) */
+.dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}

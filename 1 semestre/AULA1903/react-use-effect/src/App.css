@@ -1,0 +1,9 @@
+button{
+  color: rgb(110, 49, 59);
+  background-color: pink;
+  height: 50px;
+  width: 85%;
+  font-size: 25px;
+  border-radius: 20px;
+  margin-top: 50px ;
+}

@@ -1,0 +1,88 @@
+/* Fundo geral */
+body {
+    background-color: #e8d7db;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título */
+h3 {
+    color: #d16b86;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo */
+p {
+    color: #a85a6a;
+    margin-bottom: 20px;
+}
+
+/* Área de gráficos (placeholder) */
+.graficos {
+    background-color: #f3e6ea;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Container da tabela */
+.tabela-leituras {
+    background-color: #f3e6ea;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Cabeçalho */
+thead {
+    background-color: #ff7a9c;
+    color: white;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+/* Linhas */
+td {
+    padding: 10px;
+    color: #6e4a52;
+}
+
+/* Linhas alternadas */
+tbody tr:nth-child(even) {
+    background-color: #f8dce3;
+}
+
+/* Hover na linha */
+tbody tr:hover {
+    background-color: #f1c7d2;
+    transition: 0.2s;
+}
+
+/* Bordas suaves */
+td, th {
+    border-bottom: 1px solid #e2b8c3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    th, td {
+        font-size: 0.9rem;
+    }
+}

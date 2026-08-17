@@ -1,0 +1,48 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Container centralizado */
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título */
+.titulo {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Texto */
+.texto {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Botão */
+.botao {
+  background-color: #ff7aa2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background-color: #ff4f87;
+}
