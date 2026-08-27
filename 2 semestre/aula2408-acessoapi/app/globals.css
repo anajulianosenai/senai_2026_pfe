@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --hk-bg: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 50%, #fecdd3 100%);
+  --hk-card-bg: rgba(255, 255, 255, 0.92);
+  --hk-card-border: #f472b6;
+  --hk-pink-primary: #ff2a6d;
+  --hk-pink-soft: #ff758f;
+  --hk-pink-light: #fff1f2;
+  --hk-red-bow: #ff0055;
+  --hk-text: #4c0519;
+  --hk-text-muted: #9f1239;
+  --hk-input-bg: #ffffff;
+  --hk-input-border: #fbcfe8;
+  --hk-shadow: 0 15px 35px rgba(244, 114, 182, 0.25);
+  --radius-pill: 30px;
+  --radius-card: 24px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--hk-bg);
+  color: var(--hk-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating background cute glowing blobs */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+body::before {
+  width: 320px;
+  height: 320px;
+  background: #f472b6;
+  top: 5%;
+  left: 10%;
+}
+
+body::after {
+  width: 350px;
+  height: 350px;
+  background: #fda4af;
+  bottom: 5%;
+  right: 10%;
+}
+
+/* Header Component styling with Hello Kitty Theme */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Tiny Hello Kitty icon above header */
+header::before {
+  content: '';
+  display: block;
+  width: 55px;
+  height: 44px;
+  margin: 0 auto 0.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Cpath d='M 22 26 L 15 8 C 14 5 18 3 24 8 L 33 21 Z' fill='%23ffffff' stroke='%232b2b2b' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cpath d='M 78 26 L 85 8 C 86 5 82 3 76 8 L 67 21 Z' fill='%23ffffff' stroke='%232b2b2b' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cellipse cx='50' cy='45' rx='42' ry='32' fill='%23ffffff' stroke='%232b2b2b' stroke-width='4'/%3E%3Cellipse cx='28' cy='45' rx='4.5' ry='6' fill='%232b2b2b'/%3E%3Cellipse cx='72' cy='45' rx='4.5' ry='6' fill='%232b2b2b'/%3E%3Cellipse cx='50' cy='52' rx='5' ry='4' fill='%23ffb703' stroke='%232b2b2b' stroke-width='1.5'/%3E%3Cline x1='8' y1='42' x2='20' y2='44' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='6' y1='50' x2='19' y2='50' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='9' y1='58' x2='21' y2='55' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='92' y1='42' x2='80' y2='44' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='94' y1='50' x2='81' y2='50' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='91' y1='58' x2='79' y2='55' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M 24 20 C 14 12 12 26 24 20 Z' fill='%23ff0055' stroke='%232b2b2b' stroke-width='2'/%3E%3Cpath d='M 32 20 C 42 12 44 26 32 20 Z' fill='%23ff0055' stroke='%232b2b2b' stroke-width='2'/%3E%3Ccircle cx='28' cy='20' r='5' fill='%23ff0055' stroke='%232b2b2b' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: drop-shadow(0 4px 10px rgba(255, 0, 85, 0.25));
+  animation: bounceKitty 2.5s ease-in-out infinite;
+}
+
+@keyframes bounceKitty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+header h1 {
+  font-family: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--hk-pink-primary);
+  text-shadow: 0 2px 10px rgba(255, 42, 109, 0.15);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+/* Input Hello Kitty Styling */
+input[type="text"] {
+  width: 100%;
+  max-width: 420px;
+  background: var(--hk-input-bg);
+  border: 2px solid var(--hk-input-border);
+  color: var(--hk-text);
+  padding: 0.95rem 1.4rem;
+  border-radius: var(--radius-pill);
+  font-size: 1.05rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(244, 114, 182, 0.12);
+  text-align: center;
+}
+
+input[type="text"]::placeholder {
+  color: #f43f5e;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+input[type="text"]:focus {
+  border-color: var(--hk-pink-soft);
+  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.3);
+  transform: scale(1.02);
+}
+
+/* Button Hello Kitty Styling */
+button {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(135deg, #ff2a6d 0%, #ff758f 100%);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 0.95rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 42, 109, 0.35);
+  margin-bottom: 1.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cute bow icon next to button text */
+button::after {
+  content: '🎀';
+  font-size: 1.1rem;
+  margin-left: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 42, 109, 0.45);
+  background: linear-gradient(135deg, #ff0055 0%, #ff4d6d 100%);
+}
+
+button:hover::after {
+  transform: rotate(15deg) scale(1.2);
+}
+
+button:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Styling the Result Container ONLY when it has address (<p>) elements */
+div:has(> p) {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2.5px solid #fbcfe8;
+  border-radius: var(--radius-card);
+  padding: 1.75rem 1.25rem;
+  box-shadow: var(--hk-shadow);
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+/* Tiny Hello Kitty peeking at top corner of result container */
+div:has(> p)::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  right: 20px;
+  width: 44px;
+  height: 35px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80'%3E%3Cpath d='M 22 26 L 15 8 C 14 5 18 3 24 8 L 33 21 Z' fill='%23ffffff' stroke='%232b2b2b' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cpath d='M 78 26 L 85 8 C 86 5 82 3 76 8 L 67 21 Z' fill='%23ffffff' stroke='%232b2b2b' stroke-width='3.5' stroke-linejoin='round'/%3E%3Cellipse cx='50' cy='45' rx='42' ry='32' fill='%23ffffff' stroke='%232b2b2b' stroke-width='4'/%3E%3Cellipse cx='28' cy='45' rx='4.5' ry='6' fill='%232b2b2b'/%3E%3Cellipse cx='72' cy='45' rx='4.5' ry='6' fill='%232b2b2b'/%3E%3Cellipse cx='50' cy='52' rx='5' ry='4' fill='%23ffb703' stroke='%232b2b2b' stroke-width='1.5'/%3E%3Cline x1='8' y1='42' x2='20' y2='44' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='6' y1='50' x2='19' y2='50' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='9' y1='58' x2='21' y2='55' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='92' y1='42' x2='80' y2='44' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='94' y1='50' x2='81' y2='50' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cline x1='91' y1='58' x2='79' y2='55' stroke='%232b2b2b' stroke-width='3.5' stroke-linecap='round'/%3E%3Cpath d='M 24 20 C 14 12 12 26 24 20 Z' fill='%23ff0055' stroke='%232b2b2b' stroke-width='2'/%3E%3Cpath d='M 32 20 C 42 12 44 26 32 20 Z' fill='%23ff0055' stroke='%232b2b2b' stroke-width='2'/%3E%3Ccircle cx='28' cy='20' r='5' fill='%23ff0055' stroke='%232b2b2b' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Individual Mini Cards for each <p> (CEP, Rua, Cidade, UF) */
+div:has(> p) > p {
+  background: #ffffff;
+  border: 2px solid #fbcfe8;
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(244, 114, 182, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--hk-text);
+}
+
+/* Make Rua (the 2nd item) span full width */
+div:has(> p) > p:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+div:has(> p) > p:hover {
+  transform: translateY(-3px);
+  border-color: #ff758f;
+  box-shadow: 0 8px 20px rgba(255, 42, 109, 0.2);
+}
+
+/* Cute top bow icon on each mini card */
+div:has(> p) > p::after {
+  content: '🎀';
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Responsive adjustment for mobile screens */
+@media (max-width: 480px) {
+  div:has(> p) {
+    grid-template-columns: 1fr;
+  }
+  
+  div:has(> p) > p:nth-child(2) {
+    grid-column: 1;
+  }
+}
+
+
+
+
