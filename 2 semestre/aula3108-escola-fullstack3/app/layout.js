@@ -14,7 +14,7 @@ const quicksand = Quicksand({
 });
 
 export const metadata = {
-  title: "Hello Kitty Academy 🎀 | Gestão Escolar Kawaii",
+  title: "Projeto Escola",
   description: "Sistema fofo e completo de gestão escolar, cadastro de alunos e boletim de notas com tema Hello Kitty!",
 };
 
