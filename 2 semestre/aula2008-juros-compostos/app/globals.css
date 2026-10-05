@@ -1,0 +1,638 @@
+/* ================================
+   PÁGINA
+================================ */
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #fbe7ef 0%,
+    #f9edf2 55%,
+    #eef8ed 100%
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+
+  font-family: "Courier New", monospace;
+}
+
+
+/* ================================
+   CALCULADORA
+================================ */
+
+.calculator {
+  width: 420px;
+  max-width: 100%;
+
+  background: #fff7fa;
+
+  border: 5px solid #c8849d;
+  border-radius: 28px;
+
+  padding: 28px;
+
+  box-shadow:
+    8px 8px 0 #dfcbd2,
+    0 15px 35px rgba(190, 120, 145, 0.18);
+
+  box-sizing: border-box;
+}
+
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 4px;
+}
+
+.brand {
+  color: #ce6f91;
+
+  font-size: 25px;
+  font-weight: 900;
+
+  letter-spacing: 5px;
+
+  text-shadow:
+    3px 3px 0 #e5b4c4;
+}
+
+.solar {
+  width: 70px;
+  height: 18px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #9dd89d 0px,
+      #9dd89d 10px,
+      #b9e5b4 10px,
+      #b9e5b4 20px
+    );
+
+  border: 3px solid #8fc88f;
+  border-radius: 6px;
+}
+
+
+/* ================================
+   INFORMAÇÕES
+================================ */
+
+.modelInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 18px;
+
+  color: #b8788f;
+
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.modelName {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.edition {
+  font-size: 11px;
+  color: #cf91a5;
+}
+
+
+/* ================================
+   DISPLAY
+================================ */
+
+.displayWrapper {
+  background: #e5f2df;
+
+  border: 5px solid #b58396;
+  border-radius: 18px;
+
+  padding: 8px;
+
+  box-shadow:
+    inset 3px 3px 0 #c7ddc0,
+    4px 4px 0 #decbd1;
+
+  margin-bottom: 22px;
+}
+
+.displayInner {
+  min-height: 115px;
+
+  background: #f7fff4;
+
+  border: 3px solid #9db99b;
+  border-radius: 10px;
+
+  padding: 12px 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.displayTopRow {
+  display: flex;
+  justify-content: space-between;
+
+  color: #91a98b;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.displayMain {
+  width: 100%;
+
+  text-align: right;
+
+  color: #c96e90;
+
+  font-size: clamp(25px, 7vw, 36px);
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  text-shadow: 2px 2px 0 #e8b9c9;
+}
+
+.displayResult {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  color: #a66f82;
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
+/* ================================
+   CAMPOS
+================================ */
+
+.inputFields {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+}
+
+.fieldBtn {
+  min-height: 75px;
+
+  background: #fff1f6;
+
+  border: 4px solid #c28ba0;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  padding: 10px 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease;
+
+  box-shadow: 3px 3px 0 #e1cbd3;
+
+  font-family: "Courier New", monospace;
+}
+
+.fieldBtn:hover {
+  background: #ffe6ef;
+  transform: translateY(-2px);
+}
+
+.fieldBtn:active {
+  transform: translateY(2px);
+
+  box-shadow:
+    1px 1px 0 #e1cbd3;
+}
+
+.fieldBtnActive {
+  background: #f3b1c5;
+
+  border-color: #c76f8f;
+
+  box-shadow:
+    3px 3px 0 #d38da5;
+}
+
+.fieldLabel {
+  color: #b36d86;
+
+  font-size: 10px;
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  margin-bottom: 7px;
+}
+
+.fieldVal {
+  color: #ca668b;
+
+  font-size: 18px;
+  font-weight: 900;
+
+  max-width: 100%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+/* ================================
+   TECLADO
+================================ */
+
+.keypad {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 9px;
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.key {
+  position: relative;
+
+  height: 62px;
+
+  border: 3px solid #c18198;
+  border-radius: 12px;
+
+  background: #fff5f8;
+
+  color: #b45e7e;
+
+  cursor: pointer;
+
+  font-family: "Courier New", monospace;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    4px 4px 0 #decbd2;
+
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background 0.1s ease;
+
+  padding: 5px;
+
+  box-sizing: border-box;
+}
+
+.key:hover {
+  background: #ffe8f0;
+
+  transform: translateY(-2px);
+}
+
+.key:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    1px 1px 0 #decbd2;
+}
+
+
+/* Número */
+
+.key_num {
+  background: #fff9fb;
+}
+
+.key_num .keyLabel {
+  font-size: 21px;
+  font-weight: 900;
+}
+
+
+/* Operadores */
+
+.key_op {
+  background: #f4c1d1;
+
+  border-color: #c87995;
+
+  color: #a64f70;
+}
+
+.key_op .keyLabel {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+
+/* DEL */
+
+.key_del {
+  background: #f8d3df;
+
+  border-color: #c98299;
+}
+
+.key_del .keyLabel {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* AC */
+
+.key_ac {
+  background: #ed9fb8;
+
+  border-color: #c86f8d;
+
+  color: white;
+}
+
+.key_ac .keyLabel {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+
+/* CALC */
+
+.key_calc {
+  background: #a8dca3;
+
+  border-color: #81bd7d;
+
+  color: #557e51;
+}
+
+.key_calc .keyLabel {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* Ans */
+
+.key_ans {
+  background: #d8efcf;
+
+  border-color: #9fc394;
+
+  color: #64865e;
+}
+
+.key_ans .keyLabel {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* Igual */
+
+.key_eq {
+  background: #e88eac;
+
+  border-color: #c66d8d;
+
+  color: white;
+}
+
+.key_eq .keyLabel {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+
+/* Decimal */
+
+.key_dot {
+  background: #fff5f8;
+}
+
+.key_dot .keyLabel {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+
+/* ================================
+   TEXTO PEQUENO DOS BOTÕES
+================================ */
+
+.keyTop {
+  position: absolute;
+
+  top: 5px;
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  color: #b58b99;
+
+  font-size: 7px;
+  font-weight: bold;
+
+  letter-spacing: 0.5px;
+}
+
+.keyLabel {
+  margin-top: 6px;
+}
+
+
+/* ================================
+   RODAPÉ
+================================ */
+
+.footer {
+  margin-top: 25px;
+
+  padding-top: 15px;
+
+  border-top: 3px dashed #d8b4c1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #bc8196;
+
+  font-size: 10px;
+  font-weight: bold;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.paw {
+  font-size: 16px;
+}
+
+.footerText {
+  text-align: center;
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 20px 12px;
+  }
+
+  .calculator {
+    padding: 20px 15px;
+
+    border-width: 4px;
+    border-radius: 22px;
+
+    box-shadow:
+      6px 6px 0 #dfcbd2,
+      0 10px 25px rgba(190, 120, 145, 0.15);
+  }
+
+  .brand {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+
+  .modelName {
+    font-size: 12px;
+  }
+
+  .edition {
+    font-size: 9px;
+  }
+
+  .displayInner {
+    min-height: 100px;
+  }
+
+  .displayMain {
+    font-size: 26px;
+  }
+
+  .inputFields {
+    gap: 7px;
+  }
+
+  .fieldBtn {
+    min-height: 68px;
+
+    border-width: 3px;
+  }
+
+  .fieldLabel {
+    font-size: 8px;
+  }
+
+  .fieldVal {
+    font-size: 15px;
+  }
+
+  .keypad {
+    gap: 6px;
+  }
+
+  .key {
+    height: 55px;
+
+    border-width: 2px;
+
+    box-shadow:
+      3px 3px 0 #decbd2;
+  }
+
+  .key_num .keyLabel {
+    font-size: 18px;
+  }
+
+  .key_op .keyLabel {
+    font-size: 20px;
+  }
+}
+
+
+/* ================================
+   TELAS MUITO PEQUENAS
+================================ */
+
+@media (max-width: 350px) {
+  .calculator {
+    padding: 15px 10px;
+  }
+
+  .key {
+    height: 48px;
+  }
+
+  .keyTop {
+    font-size: 6px;
+  }
+
+  .key_num .keyLabel {
+    font-size: 16px;
+  }
+
+  .inputFields {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldBtn {
+    min-height: 55px;
+  }
+}

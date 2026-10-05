@@ -8,11 +8,32 @@ export default function CadAluno() {
     const [serie, setSerie] = useState('')
     const [ra, setRa] = useState('')
 
+  async function cadastrarAluno(evento) {
+        evento.preventDefault();
+        const resposta = await fetch("/api/alunos", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({nome, idade, serie, ra})
+        })
+        const dados = await resposta.json();
+        alert (dados.mensagem||dados.erro);
+        if(resposta.ok){
+            setNome('');
+            setIdade('');
+            setSerie('');
+            setRa('');
+        }
+    }
+
     return (
         <>
         <Header/>
         <h2>Cadastro de Aluno</h2>
-        <form action="">
+        <form onSubmit={cadastrarAluno}>
+
+            
             <label htmlFor="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
 
@@ -25,10 +46,11 @@ export default function CadAluno() {
             <label htmlFor="ra">RA:</label>
             <input type="text" name="ra" id="ra" value={ra} onChange={(e) => setRa(e.target.value)} />
 
-            <button>Cadastrar</button>
+            <button type="submit">Cadastrar</button>
         </form>
         </>
     )
 }
 
 
+    

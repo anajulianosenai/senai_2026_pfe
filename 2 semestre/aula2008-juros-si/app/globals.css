@@ -1,0 +1,494 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 210, 230, 0.8), transparent 25%),
+    radial-gradient(circle at 85% 80%, rgba(210, 235, 245, 0.8), transparent 28%),
+    linear-gradient(
+      135deg,
+      #f8e5f0 0%,
+      #f1e8f6 48%,
+      #e5f3f8 100%
+    );
+
+  font-family: "Courier New", monospace;
+
+  color: #70218c;
+}
+
+
+/* =========================================
+   ÁREA PRINCIPAL
+========================================= */
+
+body > div {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 40px 20px;
+
+  position: relative;
+}
+
+
+/* =========================================
+   DECORAÇÕES DO FUNDO
+========================================= */
+
+body > div::before {
+  content: "✿";
+
+  position: fixed;
+
+  top: 12%;
+  left: 17%;
+
+  font-size: 55px;
+
+  color: #c985d1;
+
+  opacity: 0.35;
+
+  transform: rotate(-15deg);
+
+  pointer-events: none;
+}
+
+body > div::after {
+  content: "♡  MADE WITH LOVE  ♡";
+
+  margin-top: 30px;
+
+  color: #bf9ac8;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  opacity: 0.9;
+}
+
+
+/* =========================================
+   FORMULÁRIO / CALCULADORA
+========================================= */
+
+form {
+  width: 390px;
+
+  padding: 42px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffafd,
+      #fff5f9
+    );
+
+  border: 6px solid #f1e4ed;
+
+  border-radius: 38px;
+
+  box-shadow:
+    10px 10px 0 #dcd4df,
+    16px 18px 30px rgba(113, 83, 125, 0.13),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+
+  animation: aparecer 0.5s ease;
+}
+
+
+/* =========================================
+   PEQUENO DETALHE SUPERIOR
+========================================= */
+
+form::before {
+  content: "✿  CALCULADORA  ✿";
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  text-align: center;
+
+  color: #b25bc0;
+
+  font-size: 23px;
+
+  font-weight: bold;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    2px 2px 0 #ead3ee;
+}
+
+
+/* =========================================
+   PEQUENO DETALHE DECORATIVO
+========================================= */
+
+form::after {
+  content: "♡";
+
+  position: absolute;
+
+  top: 18px;
+  right: 25px;
+
+  color: #d79bce;
+
+  font-size: 22px;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input {
+  width: 100%;
+  height: 62px;
+
+  padding: 0 22px;
+
+  border: 4px solid #e8dce8;
+
+  border-radius: 20px;
+
+  outline: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #fdfafd
+    );
+
+  color: #70218c;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 6px 0 #dcd5dd,
+    inset 0 2px 5px rgba(110, 80, 120, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* PLACEHOLDER */
+
+input::placeholder {
+  color: #a87bb2;
+
+  opacity: 1;
+}
+
+
+/* QUANDO CLICAR */
+
+input:focus {
+  border-color: #ca88d4;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 0 #c5a4ca,
+    0 8px 15px rgba(170, 100, 185, 0.12);
+}
+
+
+/* REMOVE SETINHAS DO NUMBER */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+}
+
+
+/* =========================================
+   BOTÃO CALCULAR
+========================================= */
+
+button {
+  width: 100%;
+  height: 64px;
+
+  margin-top: 7px;
+
+  border: none;
+
+  border-radius: 21px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #c56bd1 0%,
+      #b957c5 100%
+    );
+
+  color: #ffffff;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 0 #9546a3,
+    0 12px 20px rgba(115, 62, 125, 0.16);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+
+/* HOVER */
+
+button:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #d078da 0%,
+      #bd60ca 100%
+    );
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 0 #9546a3,
+    0 15px 23px rgba(115, 62, 125, 0.2);
+}
+
+
+/* CLIQUE */
+
+button:active {
+  transform: translateY(5px);
+
+  box-shadow:
+    0 2px 0 #9546a3,
+    0 5px 10px rgba(115, 62, 125, 0.15);
+}
+
+
+/* =========================================
+   RESULTADOS
+========================================= */
+
+span {
+  width: 390px;
+
+  margin-top: 22px;
+
+  padding: 18px 20px;
+
+  display: block;
+
+  border-radius: 21px;
+
+  text-align: center;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 6px 0 #d2b3c7,
+    0 10px 20px rgba(120, 80, 120, 0.08);
+
+  transition: transform 0.2s ease;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+span:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RENDIMENTO
+========================================= */
+
+span:first-of-type {
+  background:
+    linear-gradient(
+      135deg,
+      #f7d1e1,
+      #f4c5d9
+    );
+
+  border: 4px solid #e9b7cd;
+
+  color: #70215f;
+}
+
+
+/* =========================================
+   MONTANTE
+========================================= */
+
+span:last-of-type {
+  background:
+    linear-gradient(
+      135deg,
+      #ce9bd7,
+      #bd83c9
+    );
+
+  border: 4px solid #b97bc5;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 6px 0 #9d69a8,
+    0 10px 20px rgba(120, 80, 130, 0.1);
+}
+
+
+/* =========================================
+   ANIMAÇÃO
+========================================= */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 600px) {
+
+  body > div {
+    padding: 25px 15px;
+  }
+
+  form {
+    width: 92%;
+
+    padding: 30px 25px;
+
+    border-radius: 30px;
+  }
+
+  form::before {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+  }
+
+  input {
+    height: 57px;
+
+    font-size: 15px;
+  }
+
+  button {
+    height: 59px;
+
+    font-size: 18px;
+  }
+
+  span {
+    width: 92%;
+
+    font-size: 14px;
+  }
+
+  body > div::before {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   TELAS MUITO PEQUENAS
+========================================= */
+
+@media (max-width: 400px) {
+
+  form {
+    padding: 25px 20px;
+  }
+
+  form::before {
+    font-size: 16px;
+  }
+
+  input {
+    height: 54px;
+  }
+
+  button {
+    height: 56px;
+  }
+
+  span {
+    padding: 15px 10px;
+
+    font-size: 13px;
+  }
+}
