@@ -7,6 +7,10 @@ export default function ListAluno() {
     const [alunos, setAlunos] = useState([]);
     const router = useRouter();
 
+   function editarAlunos(id) {
+    console.log("ID do aluno:", id);
+    router.push(`/editaluno/${id}`);
+}
 
     async function buscarAlunos(){
     const resposta = await fetch("/api/alunos");
@@ -37,12 +41,12 @@ export default function ListAluno() {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                        <th>Série</th>
-                        <th>RA</th>
-                        <th>Ações</th>
+                        <td>ID</td>
+                        <td>Nome</td>
+                        <td>Idade</td>
+                        <td>Série</td>
+                        <td>RA</td>
+                        <td>Ações</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,9 +60,7 @@ export default function ListAluno() {
                                     <td>{aluno.serie}</td>
                                     <td>{aluno.ra}</td>
                         <td>
-                            <button onClick={() => console.log('Editar aluno')}>
-                                Editar
-                            </button>
+                            <button onClick={() => editarAlunos(aluno.id_aluno)}>Editar</button>
                             <button onClick={() => excluirAluno(aluno.ra)}>
                                 Excluir
                             </button>

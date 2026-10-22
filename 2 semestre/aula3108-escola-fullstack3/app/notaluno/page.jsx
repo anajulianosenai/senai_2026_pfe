@@ -1,62 +1,138 @@
 'use client';
-import {useState} from 'react'
-import Header from '../components/header'
+
+import { useState, useEffect} from "react";
+import Header from "../components/header";
+import styles from "./notaluno.module.css";
+import { redirect } from "next/navigation";
 
 export default function NotAluno() {
-    const [nome, setNome] = useState('')
-    const [t1, setT1] = useState('')
-    const [t2, setT2] = useState('')
-    const [nota1, setNota1] = useState('')
-    const [nota2, setNota2] = useState('')
-    const [nota3, setNota3] = useState('')
+    const [id_aluno, setIdAluno] = useState('');
+    const [t1, setT1] = useState('');
+    const [t2, setT2] = useState('');
+    const [n1, setN1] = useState('');
+    const [n2, setN2] = useState('');
+    const [n3, setN3] = useState('');
+    const [alunos, setAlunos] = useState([])
 
-    // ADICIONADO: estado para guardar a média
-    const [media, setMedia] = useState('')
+    useEffect(() => {
+        buscarAlunos();
+    }, []);
 
-    // ADICIONADO: função para calcular a média
-    function calcularMedia() {
-        const resultado = (
-            Number(nota1) +
-            Number(nota2) +
-            Number(nota3)
-        ) / 3
+    async function buscarAlunos() {
+        const resposta = await fetch("/api/alunos");
+        const dados = await resposta.json();
+        setAlunos(dados);
+    }
 
-        setMedia(resultado.toFixed(1))
+
+    async function cadastraNotas(event) {
+        event.preventDefault();
+        const resposta = await fetch("/api/notas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                id_aluno,
+                t1,
+                t2,
+                n1,
+                n2,
+                n3
+            })
+        })
+        const dados = await resposta.json();
+        alert(dados.mensagem || dados.erro)
+        if (resposta.ok) {
+            redirect("/listnota") 
+        }
     }
 
     return (
         <>
-        <Header/>
-        <h2>Cadastro de Notas</h2>
-        <form action="">
-            <label htmlFor="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+            <Header />
 
-            <label htmlFor="t1">Trabalho 1:</label>
-            <input type="number" name="t1" id="t1" value={t1} onChange={(e) => setT1(e.target.value)} />
+            <main className={styles.main}>
+                <section className={styles.container}>
+                    <div className={styles.painel}>
+                        <h2>Cadastro de Notas</h2>
 
-            <label htmlFor="t2">Trabalho 2:</label>
-            <input type="number" name="t2" id="t2" value={t2} onChange={(e) => setT2(e.target.value)} />
+                        <form className={styles.form} onSubmit={cadastraNotas}>
+                            <div className={styles.campo}>
+                                <label htmlFor="id_aluno">ID do Aluno</label>
+                                <select
+                                    value={id_aluno}
+                                    onChange={(event) => setIdAluno(event.target.value)}
+                                    required
+                                >
+                                    <option value="">Selecione um aluno</option>
 
-            <label htmlFor="nota1">Nota 1:</label>
-            <input type="number" name="nota1" id="nota1" value={nota1} onChange={(e) => setNota1(e.target.value)} />
+                                    {alunos.map((aluno) => (
+                                        <option key={aluno.id_aluno} value={aluno.id_aluno}>
+                                            {aluno.nome} - RA {aluno.ra}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
 
-            <label htmlFor="nota2">Nota 2:</label>
-            <input type="number" name="nota2" id="nota2" value={nota2} onChange={(e) => setNota2(e.target.value)} />
+                            <div className={styles.campo}>
+                                <label htmlFor="trabalho1">Trabalho 1</label>
+                                <input
+                                    id="trabalho1"
+                                    type="text"
+                                    value={t1}
+                                    onChange={(e) => setT1(e.target.value)}
+                                />
+                            </div>
 
-            <label htmlFor="nota3">Nota 3:</label>
-            <input type="number" name="nota3" id="nota3" value={nota3} onChange={(e) => setNota3(e.target.value)} />
+                            <div className={styles.campo}>
+                                <label htmlFor="trabalho2">Trabalho 2</label>
+                                <input
+                                    id="trabalho2"
+                                    type="text"
+                                    value={t2}
+                                    onChange={(e) => setT2(e.target.value)}
+                                />
+                            </div>
 
-            {/* ADICIONADO */}
-            <button type="button" onClick={calcularMedia}>
-                Calcular Média
-            </button>
+                            <div className={styles.campo}>
+                                <label htmlFor="nota1">Nota 1</label>
+                                <input
+                                    id="nota1"
+                                    type="number"
+                                    value={n1}
+                                    onChange={(e) => setN1(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.campo}>
+                                <label htmlFor="nota2">Nota 2</label>
+                                <input
+                                    id="nota2"
+                                    type="number"
+                                    value={n2}
+                                    onChange={(e) => setN2(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.campo}>
+                                <label htmlFor="nota3">Nota 3</label>
+                                <input
+                                    id="nota3"
+                                    type="number"
+                                    value={n3}
+                                    onChange={(e) => setN3(e.target.value)}
+                                />
+                            </div>
 
-            {/* ADICIONADO */}
-            {media && <p>Média: {media}</p>}
-
-            <button>Cadastrar</button>
-        </form>
+                            <button
+                                type="submit"
+                                className={styles.botao}
+                            >
+                                Salvar Nota
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </main>
         </>
-    )
+    );
 }
